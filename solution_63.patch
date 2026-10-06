@@ -1,0 +1,15 @@
+- Proposed event fields
++ Proposed event fields = {
++     "eventType": "lantern.reward.claim.requested",
++     "eventVersion": "1.0",
++     "campaignId": "lantern-crisis-v1",
++     "clientEventId": "uuid",
++     "claimId": "uuid",
++     "triggerMethod": "typed:LANTERN",
++     "triggerTimestamp": "2026-05-26T08:00:00Z",
++     "claimTimestamp": "2026-05-26T08:01:00Z",
++     "emailHash": "sha256-normalized-email",
++     "consentToSendReward": True,
++     "marketingOptIn": False,
++     "rewardAssetId": "lantern-book-12345"
++ }
