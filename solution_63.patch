@@ -1,0 +1,39 @@
+diff --git a/path/to/event_definitions.py b/path/to/event_definitions.py
+--- a/path/to/event_definitions.py
++++ b/path/to/event_definitions.py
+@@ -10,6 +10,16 @@ import json
+ 
+ class EtsEvent:
+     def __init__(self, **kwargs):
++        self.eventType = kwargs.get('eventType')
++        self.eventVersion = kwargs.get('eventVersion')
++        self.campaignId = kwargs.get('campaignId')
++        self.clientEventId = kwargs.get('clientEventId')
++        self.claimId = kwargs.get('claimId')
++        self.triggerMethod = kwargs.get('triggerMethod')
++        self.triggerTimestamp = kwargs.get('triggerTimestamp')
++        self.claimTimestamp = kwargs.get('claimTimestamp')
++        self.emailHash = kwargs.get('emailHash')
++        self.consentToSendReward = kwargs.get('consentToSendReward')
++        self.marketingOptIn = kwargs.get('marketingOptIn')
++        self.rewardAssetId = kwargs.get('rewardAssetId')
+         self.metadata = kwargs.get('metadata')
+ 
+     def to_dict(self):
+@@ -18,6 +28,7 @@ class EtsEvent:
+         result = {
+             'eventType': self.eventType,
+             'eventVersion': self.eventVersion,
++            'campaignId': self.campaignId,
+             'clientEventId': self.clientEventId,
+             'triggerMethod': self.triggerMethod,
+             'triggerTimestamp': self.triggerTimestamp,
+@@ -26,6 +37,9 @@ class EtsEvent:
+             'consentToSendReward': self.consentToSendReward,
+             'marketingOptIn': self.marketingOptIn,
++            'claimId': self.claimId,
++            'claimTimestamp': self.claimTimestamp,
++            'rewardAssetId': self.rewardAssetId,
+         }
+         result.update(self.metadata)
+         return result
